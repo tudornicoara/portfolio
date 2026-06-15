@@ -10,6 +10,10 @@
 
 # production
 /build
+/dist
+dist-ssr
+*.local
+.vite
 
 # misc
 .DS_Store
@@ -24,3 +28,5 @@ yarn-error.log*
 
 # Rider
 .idea
+
+/docs

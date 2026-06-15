@@ -1,0 +1,27 @@
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.skill {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  cursor: default;
+  transition: border-color 0.2s;
+}
+.skill:hover {
+  border-color: var(--accent-a);
+}
+.skill-primary {
+  border-color: transparent;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent-a) 25%, transparent),
+    color-mix(in srgb, var(--accent-b) 25%, transparent)
+  );
+  font-weight: 500;
+}

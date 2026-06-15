@@ -1,0 +1,39 @@
+.contact-lead {
+  color: var(--text-dim);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 2rem;
+  max-width: 40ch;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s var(--ease);
+}
+.contact-item:hover {
+  border-color: var(--accent-a);
+  transform: translateY(-3px);
+}
+.contact-label {
+  color: var(--accent-a);
+  font-size: 0.78rem;
+}
+.contact-value {
+  font-size: 1rem;
+  word-break: break-all;
+}
+.contact-copy {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+}

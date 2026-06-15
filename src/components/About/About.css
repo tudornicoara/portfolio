@@ -1,0 +1,30 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.about-bio {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: var(--text-dim);
+}
+.about-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 2;
+  overflow-x: auto;
+}
+.about-card .str {
+  color: #7ee787;
+}
+.about-card .bool {
+  color: var(--accent-a);
+}
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
