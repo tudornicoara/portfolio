@@ -1,14 +1,29 @@
+import { useState } from 'react'
 import { Section } from '../ui/Section'
 import { Card } from '../ui/Card'
-import { projects } from '../../data/projects'
+import { projects, type Project } from '../../data/projects'
+import { Lightbox } from './Lightbox'
 import './Projects.css'
 
 export function Projects() {
+  const [active, setActive] = useState<Project | null>(null)
+
   return (
     <Section id="projects" title="Projects">
       <div className="projects-grid">
         {projects.map((p) => (
           <Card key={p.title}>
+            <button
+              type="button"
+              className="project-cover"
+              onClick={() => setActive(p)}
+              aria-label={`Open ${p.title} gallery`}
+            >
+              <img src={p.images[0]} alt={p.title} loading="lazy" />
+              <span className="project-cover-hint mono">
+                {p.images.length > 1 ? `view ${p.images.length} shots` : 'view'}
+              </span>
+            </button>
             <div className="project-head">
               <span className="mono project-icon">{'</>'}</span>
               <div className="project-links">
@@ -36,6 +51,10 @@ export function Projects() {
           </Card>
         ))}
       </div>
+
+      {active && (
+        <Lightbox title={active.title} images={active.images} onClose={() => setActive(null)} />
+      )}
     </Section>
   )
 }
