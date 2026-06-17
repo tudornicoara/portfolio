@@ -4,8 +4,7 @@ import { ThemeContext, type Theme } from './useTheme'
 function initialTheme(): Theme {
   const stored = localStorage.getItem('theme')
   if (stored === 'light' || stored === 'dark') return stored
-  const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches
-  return prefersDark ? 'dark' : 'light'
+  return 'dark'
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
