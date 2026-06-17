@@ -9,12 +9,14 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--bg-image, none);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
   overflow-x: hidden;
 }
 a {

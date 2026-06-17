@@ -1,17 +1,17 @@
-.hero {
+.avatar {
   min-height: 100vh;
   display: grid;
   place-items: center;
   position: relative;
   text-align: center;
 }
-.hero-inner {
+.avatar-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
-.hero-monogram {
+.avatar-monogram {
   font-size: clamp(3rem, 9vw, 5.5rem);
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -23,18 +23,18 @@
   border-radius: 28px;
   background: var(--bg-elev);
   margin-bottom: 1rem;
-  box-shadow: 0 0 60px var(--glow);
+  box-shadow: 0 0 60px var(--glow), var(--shadow-lg);
 }
-.hero-greeting {
+.avatar-greeting {
   color: var(--accent-a);
   font-size: 0.95rem;
 }
-.hero-name {
+.avatar-name {
   font-size: clamp(2.4rem, 8vw, 4.5rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
 }
-.hero-tagline {
+.avatar-tagline {
   font-size: clamp(1rem, 3vw, 1.4rem);
   min-height: 1.6em;
 }
@@ -46,7 +46,7 @@
     opacity: 0;
   }
 }
-.hero-cta {
+.avatar-cta {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
@@ -71,11 +71,13 @@
 .btn-ghost {
   border: 1px solid var(--border);
   color: var(--text);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
 }
 .btn-ghost:hover {
   border-color: var(--accent-a);
 }
-.hero-scroll {
+.avatar-scroll {
   position: absolute;
   bottom: 2rem;
   left: 50%;

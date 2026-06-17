@@ -16,6 +16,27 @@ export function Background() {
     let h = 0
     let raf = 0
     const mouse = { x: -9999, y: -9999 }
+
+    const toRgb = (v: string, fallback: string) => {
+      const c = v.trim()
+      const m = /^#?([\da-f]{6})$/i.exec(c)
+      if (!m) return fallback
+      const n = parseInt(m[1], 16)
+      return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`
+    }
+    let linkRgb = '34,211,238'
+    let dotRgb = '168,85,247'
+    const readColors = () => {
+      const s = getComputedStyle(document.documentElement)
+      linkRgb = toRgb(s.getPropertyValue('--accent-a'), '34,211,238')
+      dotRgb = toRgb(s.getPropertyValue('--accent-b'), '168,85,247')
+    }
+    readColors()
+    const themeObserver = new MutationObserver(readColors)
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    })
     const N = 70
     const pts = Array.from({ length: N }, () => ({
       x: Math.random(),
@@ -55,7 +76,7 @@ export function Background() {
           const by = b.y * h
           const d = Math.hypot(ax - bx, ay - by)
           if (d < link) {
-            ctx.strokeStyle = `rgba(34,211,238,${0.12 * (1 - d / link)})`
+            ctx.strokeStyle = `rgba(${linkRgb},${0.12 * (1 - d / link)})`
             ctx.beginPath()
             ctx.moveTo(ax, ay)
             ctx.lineTo(bx, by)
@@ -64,7 +85,7 @@ export function Background() {
         }
         const dm = Math.hypot(ax - mouse.x, ay - mouse.y)
         const r = dm < 120 * dpr ? 2.4 : 1.4
-        ctx.fillStyle = 'rgba(168,85,247,0.5)'
+        ctx.fillStyle = `rgba(${dotRgb},0.5)`
         ctx.beginPath()
         ctx.arc(ax, ay, r * dpr, 0, Math.PI * 2)
         ctx.fill()
@@ -75,6 +96,7 @@ export function Background() {
 
     return () => {
       cancelAnimationFrame(raf)
+      themeObserver.disconnect()
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', onMove)
     }

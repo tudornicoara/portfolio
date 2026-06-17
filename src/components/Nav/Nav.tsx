@@ -15,7 +15,7 @@ export function Nav() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a href="#hero" className="nav-logo mono gradient-text">
+        <a href="#avatar" className="nav-logo mono gradient-text">
           TN<span>.</span>
         </a>
         <nav className={`nav-links ${open ? 'open' : ''}`}>

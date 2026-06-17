@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { profile } from '../../data/profile'
-import './Hero.css'
+import './Avatar.css'
 
 function useTypewriter(words: string[]) {
   const [i, setI] = useState(0)
@@ -24,13 +24,13 @@ function useTypewriter(words: string[]) {
   return text
 }
 
-export function Hero() {
+export function Avatar() {
   const typed = useTypewriter(profile.taglines)
   return (
-    <section id="hero" className="hero">
-      <div className="container hero-inner">
+    <section id="avatar" className="avatar">
+      <div className="container avatar-inner">
         <motion.div
-          className="hero-monogram mono"
+          className="avatar-monogram mono"
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -38,7 +38,7 @@ export function Hero() {
           {profile.monogram}
         </motion.div>
         <motion.p
-          className="hero-greeting mono"
+          className="avatar-greeting mono"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -46,19 +46,19 @@ export function Hero() {
           {'>'} hello, world. I'm
         </motion.p>
         <motion.h1
-          className="hero-name"
+          className="avatar-name"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
         >
           {profile.name}
         </motion.h1>
-        <p className="hero-tagline mono gradient-text">
+        <p className="avatar-tagline mono gradient-text">
           {typed}
           <span className="caret">_</span>
         </p>
         <motion.div
-          className="hero-cta"
+          className="avatar-cta"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
@@ -71,7 +71,7 @@ export function Hero() {
           </a>
         </motion.div>
       </div>
-      <a href="#about" className="hero-scroll mono" aria-label="Scroll down">
+      <a href="#about" className="avatar-scroll mono" aria-label="Scroll down">
         scroll ↓
       </a>
     </section>

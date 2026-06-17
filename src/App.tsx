@@ -1,6 +1,6 @@
 import { Background } from './components/Background/Background'
 import { Nav } from './components/Nav/Nav'
-import { Hero } from './components/Hero/Hero'
+import { Avatar } from './components/Avatar/Avatar'
 import { About } from './components/About/About'
 import { Skills } from './components/Skills/Skills'
 import { Projects } from './components/Projects/Projects'
@@ -15,7 +15,7 @@ export default function App() {
       <Background />
       <Nav />
       <main>
-        <Hero />
+        <Avatar />
         <About />
         <Skills />
         <Projects />

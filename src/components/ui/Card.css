@@ -7,11 +7,15 @@
   backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s var(--ease);
+  box-shadow: var(--shadow);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    transform 0.3s var(--ease);
   height: 100%;
 }
 .card:hover {
   border-color: var(--accent-a);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 .card::before {
   content: '';
