@@ -3,6 +3,7 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --accent-a: #22d3ee; /* cyan */
   --accent-b: #a855f7; /* violet */
+  --accent-ink: var(--accent-a); /* text-safe accent */
   --radius: 16px;
   --maxw: 1100px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -15,36 +16,38 @@
   --border: rgba(255, 255, 255, 0.1);
   --text: #e7e9f1;
   --text-dim: #9aa0b4;
+  --accent-ink: var(--accent-a);
   --glow: rgba(34, 211, 238, 0.25);
   --shadow: none;
   --shadow-lg: none;
 }
 
 [data-theme='light'] {
-  --accent-a: #e0567a; /* warm rose */
-  --accent-b: #8b5cf6; /* violet */
-  --bg: #f6f1e9; /* warm cream */
+  --accent-a: #e0567a; /* warm rose — decorative fills/glows */
+  --accent-b: #7c5cf0; /* violet */
+  --accent-ink: #b21e4b; /* deep rose — text-safe (~5:1 on cream) */
+  --bg: #f7f3ec; /* clean warm cream */
   --bg-image: radial-gradient(
       900px circle at 12% -5%,
-      rgba(245, 158, 80, 0.12),
+      rgba(245, 158, 80, 0.1),
       transparent 55%
     ),
     radial-gradient(
       1000px circle at 100% 6%,
-      rgba(224, 86, 122, 0.12),
+      rgba(224, 86, 122, 0.1),
       transparent 52%
     ),
     radial-gradient(
-      800px circle at 50% 112%,
-      rgba(139, 92, 246, 0.1),
+      820px circle at 50% 114%,
+      rgba(124, 92, 240, 0.09),
       transparent 55%
     );
-  --bg-elev: rgba(255, 252, 247, 0.78);
-  --border: rgba(70, 45, 40, 0.1);
-  --text: #2a2320;
-  --text-dim: #6b5f58;
-  --glow: rgba(224, 86, 122, 0.2);
-  --shadow: 0 1px 2px rgba(80, 50, 40, 0.07), 0 6px 20px rgba(80, 50, 40, 0.08);
-  --shadow-lg: 0 4px 12px rgba(80, 50, 40, 0.09),
-    0 18px 40px rgba(80, 50, 40, 0.14);
+  --bg-elev: rgba(255, 254, 251, 0.82);
+  --border: rgba(60, 40, 36, 0.14);
+  --text: #1f1916; /* near-ink brown — high contrast */
+  --text-dim: #5a4f47; /* darker dim — readable body */
+  --glow: rgba(224, 86, 122, 0.18);
+  --shadow: 0 1px 2px rgba(70, 45, 38, 0.06), 0 4px 14px rgba(70, 45, 38, 0.07);
+  --shadow-lg: 0 6px 16px rgba(70, 45, 38, 0.1),
+    0 22px 48px rgba(70, 45, 38, 0.14);
 }

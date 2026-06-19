@@ -20,6 +20,6 @@
   transition: border-color 0.2s, color 0.2s;
 }
 .back-to-top:hover {
-  color: var(--accent-a);
+  color: var(--accent-ink);
   border-color: var(--accent-a);
 }

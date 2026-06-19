@@ -20,7 +20,7 @@
   box-shadow: 0 0 12px var(--glow);
 }
 .timeline-period {
-  color: var(--accent-a);
+  color: var(--accent-ink);
   font-size: 0.8rem;
   margin-bottom: 0.3rem;
 }

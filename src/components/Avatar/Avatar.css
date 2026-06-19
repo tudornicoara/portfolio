@@ -48,7 +48,7 @@
   }
 }
 .avatar-greeting {
-  color: var(--accent-a);
+  color: var(--accent-ink);
   font-size: 0.95rem;
 }
 .avatar-name {

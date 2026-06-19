@@ -21,7 +21,7 @@
   color: #7ee787;
 }
 .about-card .bool {
-  color: var(--accent-a);
+  color: var(--accent-ink);
 }
 @media (max-width: 720px) {
   .about-grid {

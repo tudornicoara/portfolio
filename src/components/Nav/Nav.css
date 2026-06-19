@@ -20,8 +20,8 @@
   font-weight: 600;
 }
 .nav-logo span {
-  color: var(--accent-a);
-  -webkit-text-fill-color: var(--accent-a);
+  color: var(--accent-ink);
+  -webkit-text-fill-color: var(--accent-ink);
 }
 .nav-status {
   display: inline-flex;

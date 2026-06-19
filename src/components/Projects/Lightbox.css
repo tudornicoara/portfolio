@@ -60,7 +60,7 @@
   transition: color 0.15s, border-color 0.15s;
 }
 .lightbox-close:hover {
-  color: var(--accent-a);
+  color: var(--accent-ink);
   border-color: var(--accent-a);
 }
 
@@ -107,7 +107,7 @@
   transition: color 0.15s, border-color 0.15s, transform 0.15s;
 }
 .lightbox-nav:hover {
-  color: var(--accent-a);
+  color: var(--accent-ink);
   border-color: var(--accent-a);
   transform: scale(1.08);
 }

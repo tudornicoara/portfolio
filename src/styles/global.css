@@ -44,6 +44,9 @@ button {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+[data-theme='light'] .gradient-text {
+  background-image: linear-gradient(90deg, var(--accent-ink), var(--accent-b));
+}
 .container {
   width: min(100% - 2.5rem, var(--maxw));
   margin-inline: auto;
