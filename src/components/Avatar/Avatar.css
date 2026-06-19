@@ -24,6 +24,28 @@
   background: var(--bg-elev);
   margin-bottom: 1rem;
   box-shadow: 0 0 60px var(--glow), var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  animation: monogram-float 6s ease-in-out infinite;
+}
+.avatar-monogram-text {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(120deg, var(--text) 30%, var(--accent-a), var(--accent-b), var(--text) 70%);
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.8s var(--ease);
+}
+.avatar-monogram:hover .avatar-monogram-text {
+  background-position: 0 0;
+}
+@keyframes monogram-float {
+  50% {
+    transform: translateY(-8px);
+  }
 }
 .avatar-greeting {
   color: var(--accent-a);

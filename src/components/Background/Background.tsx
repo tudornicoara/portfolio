@@ -94,9 +94,20 @@ export function Background() {
     }
     draw()
 
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf)
+        raf = 0
+      } else if (!raf) {
+        draw()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+
     return () => {
       cancelAnimationFrame(raf)
       themeObserver.disconnect()
+      document.removeEventListener('visibilitychange', onVisibility)
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', onMove)
     }
@@ -104,6 +115,11 @@ export function Background() {
 
   return (
     <div className="bg-wrap" aria-hidden="true">
+      <div className="bg-aurora">
+        <span className="aurora-blob a" />
+        <span className="aurora-blob b" />
+        <span className="aurora-blob c" />
+      </div>
       <canvas ref={ref} className="bg-canvas" />
       <div className="bg-glow" />
     </div>

@@ -1,0 +1,25 @@
+.back-to-top {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 55;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
+  transition: border-color 0.2s, color 0.2s;
+}
+.back-to-top:hover {
+  color: var(--accent-a);
+  border-color: var(--accent-a);
+}

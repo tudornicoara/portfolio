@@ -1,3 +1,17 @@
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem 2.5rem;
+}
+.skill-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--accent-a);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
 .skills-grid {
   display: flex;
   flex-wrap: wrap;

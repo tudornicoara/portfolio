@@ -42,6 +42,11 @@ export function Contact() {
           <span className="contact-value">tudor-nicoara</span>
           <span className="mono contact-copy">open ↗</span>
         </a>
+        <a className="contact-item" href="/cv.pdf" download>
+          <span className="mono contact-label">resume</span>
+          <span className="contact-value">CV (PDF)</span>
+          <span className="mono contact-copy">download ↓</span>
+        </a>
       </div>
     </Section>
   )

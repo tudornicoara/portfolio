@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { profile } from '../../data/profile'
+import { Magnetic } from '../ui/Magnetic'
 import './Avatar.css'
 
 function useTypewriter(words: string[]) {
@@ -35,7 +36,7 @@ export function Avatar() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          {profile.monogram}
+          <span className="avatar-monogram-text">{profile.monogram}</span>
         </motion.div>
         <motion.p
           className="avatar-greeting mono"
@@ -63,12 +64,21 @@ export function Avatar() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <a href="#projects" className="btn btn-primary">
-            View Work
-          </a>
-          <a href="#contact" className="btn btn-ghost">
-            Get in Touch
-          </a>
+          <Magnetic>
+            <a href="#projects" className="btn btn-primary">
+              View Work
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a href="#contact" className="btn btn-ghost">
+              Get in Touch
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a href="/cv.pdf" download className="btn btn-ghost">
+              Download CV ↓
+            </a>
+          </Magnetic>
         </motion.div>
       </div>
       <a href="#about" className="avatar-scroll mono" aria-label="Scroll down">

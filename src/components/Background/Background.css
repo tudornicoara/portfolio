@@ -9,6 +9,63 @@
   height: 100%;
   display: block;
 }
+.bg-aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 0.55;
+}
+[data-theme='light'] .bg-aurora {
+  opacity: 0.7;
+}
+.aurora-blob {
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+  will-change: transform;
+}
+.aurora-blob.a {
+  top: -12%;
+  left: -6%;
+  background: radial-gradient(circle, var(--accent-a), transparent 65%);
+  animation: aurora-a 22s var(--ease) infinite alternate;
+}
+.aurora-blob.b {
+  top: -8%;
+  right: -8%;
+  background: radial-gradient(circle, var(--accent-b), transparent 65%);
+  animation: aurora-b 26s var(--ease) infinite alternate;
+}
+.aurora-blob.c {
+  top: 30%;
+  left: 35%;
+  width: 38vw;
+  height: 38vw;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent-a) 60%, var(--accent-b)),
+    transparent 65%
+  );
+  animation: aurora-c 30s var(--ease) infinite alternate;
+}
+@keyframes aurora-a {
+  to {
+    transform: translate(18vw, 14vh) scale(1.2);
+  }
+}
+@keyframes aurora-b {
+  to {
+    transform: translate(-16vw, 20vh) scale(1.15);
+  }
+}
+@keyframes aurora-c {
+  to {
+    transform: translate(-12vw, -10vh) scale(0.85);
+  }
+}
 .bg-glow {
   position: absolute;
   top: -20%;

@@ -38,7 +38,7 @@ test('uses localStorage value when present', () => {
   expect(document.documentElement.getAttribute('data-theme')).toBe('light')
 })
 
-test('falls back to system preference when no storage', () => {
+test('defaults to dark when no storage, ignoring system preference', () => {
   setSystem(true)
   render(
     <ThemeProvider>
@@ -55,10 +55,10 @@ test('toggle flips theme and persists', async () => {
       <Probe />
     </ThemeProvider>,
   )
-  expect(screen.getByText('theme:light')).toBeInTheDocument()
+  expect(screen.getByText('theme:dark')).toBeInTheDocument()
   await act(async () => {
     await userEvent.click(screen.getByRole('button'))
   })
-  expect(screen.getByText('theme:dark')).toBeInTheDocument()
-  expect(localStorage.getItem('theme')).toBe('dark')
+  expect(screen.getByText('theme:light')).toBeInTheDocument()
+  expect(localStorage.getItem('theme')).toBe('light')
 })
