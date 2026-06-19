@@ -50,6 +50,31 @@ export const projects: Project[] = [
     images: [opt('reactivities1.webp'), opt('reactivities2.webp')],
   },
   {
+    title: 'ReStore',
+    description:
+      'Full-stack e-commerce store with a product catalog, search, filtering, shopping cart, and a multi-step checkout flow with Stripe payments.',
+    tags: ['React', 'TypeScript', '.NET', 'EF Core', 'Stripe'],
+    github: 'https://github.com/tudornicoara/ReStore',
+    cover: opt('reStore1.cover.webp'),
+    images: [
+      opt('reStore1.webp'),
+      opt('reStore2.webp'),
+      opt('reStore3.webp'),
+      opt('reStore4.webp'),
+      opt('reStore5.webp'),
+    ],
+  },
+  {
+    title: 'Self-Driving Car',
+    description:
+      'TypeScript simulation of a car learning to navigate traffic via a neural network. Save the best brain each generation and evolve it over successive runs.',
+    tags: ['TypeScript', 'Neural Network', 'Canvas API', 'AI'],
+    github: 'https://github.com/tudornicoara/SelfDrivingCarNeuralNetwork',
+    live: 'https://selfdrivingcar.tudornicoara.com',
+    cover: opt('selfDrivingCar1.cover.webp'),
+    images: [opt('selfDrivingCar1.webp')],
+  },
+  {
     title: 'Minesweeper',
     description:
       'Classic Minesweeper rebuilt for the web — pick a difficulty and play. Live and hosted.',
